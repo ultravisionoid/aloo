@@ -1,0 +1,50 @@
+<h1>ugyftdddftyghuiops</h1>
+<h3>Subjects List :</h3>
+<p>Subjects:<span *ngFor="let s of Subjects">{{ s  }}</span></p>
+<span *ngIf="ShowFaculy">{{FacultyName}}</span>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Annual Salary</th>
+            <th>Date of Birth</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let emp of employees">
+            <td>{{emp.code}}</td>
+            <td>{{emp.name | uppercase | gender:emp.gender}}</td>
+            <td>{{emp.gender}}</td>
+            <td>{{emp.annualSalary}}</td>
+            <td>{{emp.dateOfBirth | date:"fullDate"}}</td>
+            
+        </tr>
+        <tr *ngIf="employees.length==0">
+            <td >
+                Nothing to display
+
+            </td>
+        </tr>
+    </tbody>
+    
+</table>
+<br>
+<table border="1">
+    <thead><tr><th> Name</th><th>Cost</th> <th>Category</th>
+        </tr>
+    </thead>
+    <tbody >
+        <tr *ngFor="let pro of products">
+            <td>{{pro.name}}</td>
+            <td>{{pro.cost}}</td>
+            <td>{{pro.category}}</td>
+        </tr>
+          
+    </tbody>
+</table>
+<button (click)="funcClick(10)" class="btn btn-primary" id="aa">button</button>
+<button (click)="funcDelete(100)" id ="DELETE" class="btn btn-warning">DELETE</button>
+<button (click)="funcUpdate(100,'dfg')" id ="Update" class="btn btn-danger">updated  </button>
